@@ -1,0 +1,241 @@
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--bg);
+}
+
+.nav {
+  height: calc(var(--header-height) + 1.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.navLogo {
+  flex: 1;
+}
+
+.navLogo,
+.navToggle {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navLogoMenu {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.navMenu {
+  flex: 2;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--weight-medium);
+  transition: 0.3s;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navIcon,
+.navClose,
+.navToggle {
+  display: none;
+}
+
+.navItem {
+  position: relative;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  border-radius: 8px; /* Bo tròn các góc của dropdown */
+}
+
+.dropdownMenu::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 20px; /* Điều chỉnh vị trí theo thiết kế của bạn */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  filter: drop-shadow(
+    0 -2px 2px rgba(0, 0, 0, 0.1)
+  ); /* Thêm bóng cho dấu nhọn */
+}
+
+.navItem:hover .dropdownMenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  padding: 10px 20px;
+}
+
+.dropdownItem a {
+  text-decoration: none;
+  color: var(--textColor);
+}
+
+.dropdownItem:hover {
+  background-color: #f0f0f0;
+}
+
+/* ---------------- Active link ------------------ */
+.activeLink,
+.navLink:hover {
+  color: var(--title-color-dark);
+}
+
+/* ---------------- Change background ------------------ */
+.scrollHeader {
+  box-shadow: var(--boxShadow);
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- BREAKPOINTS ------------------ */
+@media screen and (max-width: 1024px) {
+  .header {
+    top: initial;
+    top: 0;
+  }
+
+  .navItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .navMenu {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    max-width: 340px;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+    padding: 30px;
+    z-index: 2;
+    overflow-y: auto;
+    visibility: hidden;
+    transition: 0.25s var(--cubic-in);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Add box-shadow to the left */
+  }
+
+  .showMenu {
+    transform: translateX(-340px);
+    visibility: visible;
+    transition: 0.5s var(--cubic-out);
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .navList {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .navIcon {
+    /* Kiểm tra kích thước và các thuộc tính khác của icon */
+    font-size: 16px; /* Điều chỉnh kích thước icon nếu cần */
+  }
+
+  .navClose {
+    position: absolute;
+    right: 1.3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--title-color);
+    top: 5px;
+  }
+
+  .navToggle {
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .navIcon,
+  .navClose,
+  .navToggle {
+    display: block;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .navMenu {
+    padding: 2rem 0.25rem 4rem;
+  }
+
+  .navList {
+    column-gap: 0;
+  }
+}

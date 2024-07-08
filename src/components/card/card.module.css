@@ -1,0 +1,75 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Đảm bảo các phần tử con có chiều cao bằng nhau */
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  border-radius: var(--radius-16);
+  transition: var(--transition-1);
+  position: relative;
+  height: auto;
+  min-width: 350px;
+  height: 244px;
+  overflow: hidden;
+}
+
+.imageContainer:is(:hover, :focus-within) {
+  transform: translateY(-2px);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.recentSize {
+  width: 271px;
+}
+
+.cardBadges {
+  display: flex;
+  gap: 10px;
+}
+
+.cardBadge {
+  background-color: var(--bg-prussian-blue);
+  max-width: max-content;
+  color: var(--text-white);
+  font-weight: var(--weight-bold);
+  padding: 4px 15px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-1);
+}
+
+.cardBadge:is(:hover, :focus-visible) {
+  transform: translateY(-2px);
+  background-color: var(--bg-carolina-blue);
+}
+
+.cardTitle {
+  margin-block: 15px 20px;
+}
+
+.cardText {
+  color: var(--text-wild-blue-yonder);
+  line-height: var(--lineHeight-1);
+}
+
+.cardTag {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .imageContainer {
+    display: none;
+  }
+}

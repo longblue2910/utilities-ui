@@ -1,0 +1,94 @@
+.footer {
+  padding-inline: 20px;
+  border-radius: var(--radius-48);
+  color: var(--textColor);
+}
+
+.foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  padding-inline: 120px;
+  padding-block: 40px;
+}
+
+.footerText {
+  color: var(--text-wild-blue-yonder);
+  line-height: var(--lineHeight-1);
+}
+
+.footerText:not(.address) {
+  margin-block: 20px;
+}
+
+.footerBrand .footerListTitle {
+  margin-block-end: 2px;
+}
+
+.footerListTitle {
+  color: var(--textColor);
+  font-size: var(--fontSize-7);
+  margin-block-end: 30px;
+}
+
+.footerList ul {
+  columns: 2;
+}
+
+.footerLink {
+  padding-bottom: 12px;
+}
+
+.footer ion-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  --ionicon-stroke-width: 40px;
+}
+
+.footerBottom {
+  border-block-start: 1px solid var(--border-prussian-blue);
+  padding-block: 20px;
+  margin-top: 100px;
+}
+
+.copyright {
+  text-align: center;
+  margin-block-end: 15px;
+}
+
+.copyrightLink {
+  display: inline-block;
+  color: var(--text-carolina-blue);
+  font-style: italic;
+}
+
+@media screen and (max-width: 1280px) {
+  .footerTop {
+    padding-inline: 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    margin-top: 20px;
+  }
+
+  .footerTop {
+    padding-inline: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerTop {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
