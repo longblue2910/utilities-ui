@@ -64,7 +64,7 @@ const DoiSoThanhChuPage = () => {
     // Format dấu phẩy ở phần nghìn
     const numberValue = parseInt(formattedValue, 10);
     if (!isNaN(numberValue)) {
-      setNumber(numberValue.toLocaleString());
+      setNumber(numberValue.toLocaleString("en-US"));
     } else {
       setNumber("");
     }
