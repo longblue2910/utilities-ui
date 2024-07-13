@@ -1,36 +1,65 @@
 .card {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch; /* Đảm bảo các phần tử con có chiều cao bằng nhau */
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.imageContainer {
-  flex: 1;
-  display: flex;
-  border-radius: var(--radius-16);
-  transition: var(--transition-1);
-  position: relative;
-  height: auto;
-  min-width: 350px;
-  height: 244px;
+  width: 300px;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
 }
 
-.imageContainer:is(:hover, :focus-within) {
-  transform: translateY(-2px);
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.card img:hover {
+  transform: scale(1.05);
 }
 
 .cardContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-self: stretch;
+  padding: 16px;
 }
 
-.recentSize {
-  width: 271px;
+.cardTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.cardText {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardTag {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cardTag ion-icon {
+  font-size: 16px;
+}
+
+.span {
+  color: #666;
+  font-size: 14px;
+}
+
+.card-wrapper {
+  margin-top: 10px;
 }
 
 .cardBadges {
@@ -42,34 +71,13 @@
   background-color: var(--bg-prussian-blue);
   max-width: max-content;
   color: var(--text-white);
-  font-weight: var(--weight-bold);
-  padding: 4px 15px;
+  padding: 2px 11px;
   border-radius: var(--radius-pill);
   transition: var(--transition-1);
+  margin-bottom: 10px;
 }
 
 .cardBadge:is(:hover, :focus-visible) {
   transform: translateY(-2px);
   background-color: var(--bg-carolina-blue);
-}
-
-.cardTitle {
-  margin-block: 15px 20px;
-}
-
-.cardText {
-  color: var(--text-wild-blue-yonder);
-  line-height: var(--lineHeight-1);
-}
-
-.cardTag {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-
-@media screen and (max-width: 1024px) {
-  .imageContainer {
-    display: none;
-  }
 }

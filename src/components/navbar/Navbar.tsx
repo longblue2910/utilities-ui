@@ -60,23 +60,15 @@ const Navbar: React.FC = () => {
         >
           <div className={styles.navLinks}>
             <ul className={`${styles.navList} ${styles.grid}`}>
-              <li
-                className={`${styles.navItem} hover1`}
-                onMouseEnter={() => setShowDropdown(true)}
-                onMouseLeave={() => setShowDropdown(false)}
-              >
-                <i className={`uil uil-estate ${styles.navIcon}`}></i>
-                <span className={styles.link}>Tiện ích</span>
-
-                {showDropdown && (
-                  <ul className={styles.dropdownMenu}>
-                    <li className={styles.dropdownItem}>
-                      <Link href="/doi-so-thanh-chu" onClick={startNavigation}>
-                        Đổi số tiền thành chữ
-                      </Link>
-                    </li>
-                  </ul>
-                )}
+              <li className={`${styles.navItem} hover1`}>
+                <i className={`uil uil-user ${styles.navIcon}`}></i>
+                <Link
+                  href="/gioi-thieu"
+                  className={`${styles.link} hover1`}
+                  onClick={startNavigation}
+                >
+                  Giới thiệu
+                </Link>
               </li>
               <li className={`${styles.navItem} hover1`}>
                 <i className={`uil uil-user ${styles.navIcon}`}></i>
@@ -85,7 +77,7 @@ const Navbar: React.FC = () => {
                   className={`${styles.link} hover1`}
                   onClick={startNavigation}
                 >
-                  <span>Thủ thuật máy tính</span>
+                  Khóa học
                 </Link>
               </li>
               <li className={`${styles.navItem} hover1`}>
@@ -95,7 +87,17 @@ const Navbar: React.FC = () => {
                   className={`${styles.link} hover1`}
                   onClick={startNavigation}
                 >
-                  <span>Thủ thuật Office</span>
+                  Blog
+                </Link>
+              </li>
+              <li className={`${styles.navItem} hover1`}>
+                <i className={`uil uil-file-alt ${styles.navIcon}`}></i>
+                <Link
+                  href="/thu-thuat/office"
+                  className={`${styles.link} hover1`}
+                  onClick={startNavigation}
+                >
+                  Thảo luận
                 </Link>
               </li>
             </ul>

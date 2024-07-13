@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={notoSan.className}>
+      <body className={`${notoSan.className} custom-font`}>
         <AuthProvider>
           <ThemeContextProvider>
             <ThemeProvider>

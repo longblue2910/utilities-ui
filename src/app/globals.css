@@ -82,6 +82,17 @@
   --z-modal: 1000;
 }
 
+@font-face {
+  font-family: "SF Mono";
+  src: url("/fonts/SFMono/SFMono-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom-font {
+  font-family: "SF Mono", monospace;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -335,6 +346,8 @@ button {
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 640px;
+    padding-left: 10px;
+    padding-right: 40px;
   }
 
   .section {
@@ -345,6 +358,20 @@ button {
 @media screen and (max-width: 640px) {
   .wrapper {
     max-width: 475px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .wrapper {
+    padding-left: 60px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
